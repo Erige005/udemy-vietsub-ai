@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Udemy Vietsub AI",
+  "version": "0.1.0",
+  "description": "Dịch lại phụ đề tiếng Anh của Udemy sang tiếng Việt bằng DeepSeek, có ngữ cảnh cả bài giảng.",
+  "permissions": ["storage", "unlimitedStorage"],
+  "host_permissions": [
+    "https://*.udemy.com/*",
+    "https://*.udemycdn.com/*",
+    "https://api.deepseek.com/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://*.udemy.com/*"],
+      "js": ["vtt.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": { "default_popup": "popup.html", "default_title": "Udemy Vietsub AI" },
+  "options_page": "options.html"
+}

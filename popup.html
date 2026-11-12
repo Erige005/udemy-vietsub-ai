@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 300px; margin: 0; padding: 14px; font: 13px/1.45 system-ui, sans-serif; color: #1c1d1f; }
+    h1 { font-size: 15px; margin: 0 0 10px; }
+    .row { margin: 8px 0; }
+    .muted { color: #6a6f73; }
+    .err { color: #b32d0f; }
+    button { width: 100%; padding: 8px; margin-top: 6px; border: 0; border-radius: 4px; background: #5624d0; color: #fff; font-weight: 600; cursor: pointer; }
+    button.secondary { background: #e8e8ea; color: #1c1d1f; }
+    button:disabled { opacity: .5; cursor: default; }
+    progress { width: 100%; }
+    label { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Udemy Vietsub AI</h1>
+  <label class="row"><input type="checkbox" id="enabled"> Bật vietsub AI</label>
+  <label class="row">Cỡ chữ <input type="range" id="fontScale" min="40" max="150" step="5" style="flex:1"> <span id="fontScaleVal"></span></label>
+  <div class="row" id="lecture"></div>
+  <div class="row" id="job"></div>
+  <button id="start">Dịch trước cả khoá</button>
+  <button id="stop" class="secondary" hidden>Dừng</button>
+  <button id="options" class="secondary">Cài đặt</button>
+  <script src="popup.js"></script>
+</body>
+</html>

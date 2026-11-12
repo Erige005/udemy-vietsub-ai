@@ -1,0 +1,54 @@
+/* Ẩn phụ đề gốc của Udemy khi extension đang thay thế */
+html.uvs-hide-native [class*="captions-display--captions-container"],
+html.uvs-hide-native [class*="captions-display--captions-cue-text"],
+html.uvs-hide-native [data-purpose="captions-cue-text"] {
+  display: none !important;
+}
+html.uvs-hide-native video::cue {
+  opacity: 0;
+}
+
+.uvs-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4%;
+  pointer-events: none;
+  z-index: 2147483000;
+  container-type: inline-size;
+}
+
+.uvs-sub,
+.uvs-status {
+  max-width: 92%;
+  text-align: center;
+  white-space: pre-wrap;
+  border-radius: 4px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.uvs-sub {
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  font-size: calc(var(--uvs-scale, 0.75) * clamp(14px, 2.6cqw, 40px));
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 0.15em 0.55em;
+}
+
+.uvs-status {
+  background: rgba(20, 20, 20, 0.85);
+  color: #ffd75e;
+  font-size: clamp(12px, 1.8cqw, 24px);
+  padding: 0.3em 0.8em;
+}
+
+.uvs-sub:empty,
+.uvs-status:empty {
+  display: none;
+}
